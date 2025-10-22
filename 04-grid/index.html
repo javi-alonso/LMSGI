@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>04 - Grid: Ejemplos CSS Grid</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <h1>CSS Grid — ejemplos</h1>
+        <nav aria-label="Navegación grid">
+          <ul>
+            <li><a href="#simple">Grid simple</a></li>
+            <li><a href="#repeat">Repeat / auto-fit</a></li>
+            <li><a href="#areas">Grid areas</a></li>
+            <li><a href="#auto-rows">grid-auto-rows</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <section id="simple" class="card">
+        <h2>Grid simple (2 columnas)</h2>
+        <div class="grid grid-simple">
+          <div class="cell"><p>párrafo</p></div>
+          <div class="cell"><p>párrafo</p></div>
+          <div class="cell"><p>párrafo</p></div>
+          <div class="cell"><p>párrafo</p></div>
+        </div>
+      </section>
+
+      <section id="repeat" class="card">
+        <h2>Repeat / auto-fit (responsive)</h2>
+        <div class="grid grid-repeat">
+          <div class="cell"><p>párrafo</p></div>
+          <div class="cell"><p>párrafo</p></div>
+          <div class="cell"><p>párrafo</p></div>
+          <div class="cell"><p>párrafo</p></div>
+          <div class="cell"><p>párrafo</p></div>
+        </div>
+      </section>
+
+      <section id="areas" class="card">
+        <h2>Grid-template-areas</h2>
+        <div class="grid grid-areas">
+          <div class="header area"><p>párrafo</p></div>
+          <div class="sidebar area"><p>párrafo</p></div>
+          <div class="content area"><p>párrafo</p></div>
+          <div class="footer area"><p>párrafo</p></div>
+        </div>
+      </section>
+
+      <section id="auto-rows" class="card">
+        <h2>grid-auto-rows y align-items / justify-items</h2>
+        <div class="grid grid-auto-rows">
+          <div class="cell tall"><p>párrafo</p></div>
+          <div class="cell"><p>párrafo</p></div>
+          <div class="cell"><p>párrafo</p></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>04 - Grid — ejemplos didácticos</p>
+      </div>
+    </footer>
+  </body>
+</html>
