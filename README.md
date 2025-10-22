@@ -1,4 +1,4 @@
-# Aprender HTML5 y CSS (Flexbox, Media Queries, Positioning)
+# Ejemplos prácticos HTML5 y CSS (Flexbox, Media Queries, Positioning)
 
 Este repositorio contiene páginas de práctica para aprender HTML5 y CSS, enfocadas en:
 
@@ -41,4 +41,3 @@ Mejoras sugeridas
 - Añadir una carpeta `exercises/` con ejercicios y soluciones.
 
 Si quieres, puedo añadir cualquiera de las mejoras anteriores: indícame cuál prefieres y la implemento.
-# LMSGI
