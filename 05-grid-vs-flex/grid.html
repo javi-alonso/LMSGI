@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejemplo CSS Grid</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      display: grid;
+      grid-template-areas: 
+        "header header header"
+        "sidebar main main"
+        "footer footer footer";
+      grid-template-columns: 1fr 2fr 1fr;
+      grid-template-rows: 100px 200px 100px;
+      gap: 10px; /* espacio entre filas y columnas */
+      padding: 10px;
+    }
+
+    .header {
+      grid-area: header;
+      background-color: #ff9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .sidebar {
+      grid-area: sidebar;
+      background-color: #99ccff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .main {
+      grid-area: main;
+      background-color: #99ff99;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .footer {
+      grid-area: footer;
+      background-color: #ffcc99;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">HEADER</div>
+    <div class="sidebar">SIDEBAR</div>
+    <div class="main">MAIN</div>
+    <div class="footer">FOOTER</div>
+  </div>
+</body>
+</html>
