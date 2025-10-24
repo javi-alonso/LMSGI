@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,14 +14,15 @@
     .container {
       display: flex;
       flex-direction: column;
-      gap: 10px; /* espacio entre filas */
-      padding: 10px;
+      gap: 10px;
+     
       height: 100vh;
     }
 
     .header {
       background-color: #ff9999;
-      flex: 0 0 100px; /* altura fija */
+      flex: 0 0 100px;
+      /* altura fija */
       display: flex;
       align-items: center;
       justify-content: center;
@@ -31,12 +33,14 @@
     .content {
       display: flex;
       flex: 1;
-      gap: 10px; /* espacio entre columnas */
+      gap: 10px;
+      /* espacio entre columnas */
     }
 
     .sidebar {
       background-color: #99ccff;
-      flex: 1; /* ocupa 1 fracción */
+      flex: 1;
+      /* ocupa 1 fracción */
       display: flex;
       align-items: center;
       justify-content: center;
@@ -46,8 +50,11 @@
 
     .main {
       background-color: #99ff99;
-      flex: 2; /* ocupa 2 fracciones */
+      flex: 2;
+      /* ocupa 2 fracciones */
       display: flex;
+      flex-direction: column;
+      text-align: justify;
       align-items: center;
       justify-content: center;
       font-size: 24px;
@@ -56,24 +63,34 @@
 
     .footer {
       background-color: #ffcc99;
-      flex: 0 0 100px; /* altura fija */
+      flex: 0 0 100px;
+      /* altura fija */
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 24px;
       font-weight: bold;
     }
-
   </style>
 </head>
+
 <body>
   <div class="container">
     <div class="header">HEADER</div>
     <div class="content">
       <div class="sidebar">SIDEBAR</div>
-      <div class="main">MAIN</div>
+      <div class="main">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat impedit incidunt nesciunt quam magni enim,
+          voluptatum sit a repellendus quos suscipit ipsa unde pariatur, vel minus voluptates eaque laborum non!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat impedit incidunt nesciunt quam magni enim,
+          voluptatum sit a repellendus quos suscipit ipsa unde pariatur, vel minus voluptates eaque laborum non!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat impedit incidunt nesciunt quam magni enim,
+          voluptatum sit a repellendus quos suscipit ipsa unde pariatur, vel minus voluptates eaque laborum non!</p>
+
+      </div>
     </div>
     <div class="footer">FOOTER</div>
   </div>
 </body>
+
 </html>
