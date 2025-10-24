@@ -15,17 +15,22 @@ Colección de pequeñas demos didácticas para practicar técnicas de layout y C
 Proyectos
 
 ## Flexbox
-Demostraciones básicas de layout con Flexbox. Vista rápida: https://htmlpreview.github.io/?https://raw.githubusercontent.com/javi-alonso/LMSGI/refs/heads/main/flexbox/index.html
+Demostraciones básicas de layout con Flexbox. Vista rápida: https://htmlpreview.github.io/?https://raw.githubusercontent.com/javi-alonso/LMSGI/refs/heads/main/03-flexbox/index.html
 
 ## Media Queries
-Ejemplos de `@media` para pantalla e impresión. Vista rápida: https://htmlpreview.github.io/?https://raw.githubusercontent.com/javi-alonso/LMSGI/refs/heads/main/MediaQuery/index.html
+Ejemplos de `@media` para pantalla e impresión. Vista rápida: https://htmlpreview.github.io/?https://raw.githubusercontent.com/javi-alonso/LMSGI/refs/heads/main/02-media-query/index.html
 
 ## Positioning
-Ejemplos de `position` (absolute, relative, fixed, sticky), `float` y `z-index`. Vista rápida: https://htmlpreview.github.io/?https://raw.githubusercontent.com/javi-alonso/LMSGI/refs/heads/main/Positioning/index.html
+Ejemplos de `position` (absolute, relative, fixed, sticky), `float` y `z-index`. Vista rápida: https://htmlpreview.github.io/?https://raw.githubusercontent.com/javi-alonso/LMSGI/refs/heads/main/01-positioning/index.html
 
 ## Grid
 Colección de ejemplos de CSS Grid (áreas, repeat, auto-fit). Vista rápida: https://htmlpreview.github.io/?https://raw.githubusercontent.com/javi-alonso/LMSGI/refs/heads/main/04-grid/index.html
 
+
+## Grid vs Flexbox
+
+Grid: https://htmlpreview.github.io/?https://raw.githubusercontent.com/javi-alonso/LMSGI/refs/heads/main/05-grid-vs-flex/grid.html
+Flex: https://htmlpreview.github.io/?https://raw.githubusercontent.com/javi-alonso/LMSGI/refs/heads/main/05-grid-vs-flex/flex.html
 
 Estructura del proyecto
 
@@ -41,13 +46,6 @@ Estructura del proyecto
 	- `index.html` — Ejemplos de `position: relative/absolute`, `position: fixed`, `position: sticky`, `float` y `z-index`.
 	- `styles.css` — Estilos que muestran las diferencias y demos con superposición.
 
-Cómo abrir las demos (macOS, zsh)
-
-```bash
-open ./LMSGI/flexbox/index.html
-open ./LMSGI/MediaQuery/index.html
-open ./LMSGI/Positioning/index.html
-```
 
 ## Abrir en VS Code online
 
@@ -60,19 +58,3 @@ Si solo quieres ver una página HTML sin descargar el repositorio, puedes usar h
 ```
 https://htmlpreview.github.io/?https://raw.githubusercontent.com/javi-alonso/LMSGI/refs/heads/main/05-grid-vs-flex/flex.html
 ```
-
-
-
-Qué observar
-
-- Flexbox: redimensiona la ventana y usa el menú para saltar entre los ejemplos. Observa la diferencia entre `justify-content` y `align-items` y el comportamiento de `flex-direction` y `flex-wrap`.
-- MediaQuery: usa las herramientas de desarrollador para emular dispositivos o cambia el tamaño de la ventana; para `print` usa la vista previa de impresión (Cmd+P) y comprueba cómo cambian los estilos.
-- Positioning: desplázate para ver `fixed` y `sticky`, observa cajas colocadas con `absolute` dentro de un contenedor relativo, y usa hover sobre los stacks para ver cómo cambia `z-index`.
-
-Mejoras sugeridas
-
-- Añadir comentarios explicativos en los archivos HTML/CSS para uso didáctico.
-- Añadir un panel interactivo (pequeño JS) para cambiar propiedades en tiempo real (por ejemplo `justify-content`, `z-index`).
-- Añadir una carpeta `exercises/` con ejercicios y soluciones.
-
-Si quieres, puedo añadir cualquiera de las mejoras anteriores: indícame cuál prefieres y la implemento.
