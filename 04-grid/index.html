@@ -1,72 +1,112 @@
 <!doctype html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>04 - Grid: Ejemplos CSS Grid</title>
-    <link rel="stylesheet" href="styles.css">
-  </head>
-  <body>
-    <header class="site-header">
-      <div class="container">
-        <h1>CSS Grid — ejemplos</h1>
-        <nav aria-label="Navegación grid">
-          <ul>
-            <li><a href="#simple">Grid simple</a></li>
-            <li><a href="#repeat">Repeat / auto-fit</a></li>
-            <li><a href="#areas">Grid areas</a></li>
-            <li><a href="#auto-rows">grid-auto-rows</a></li>
-          </ul>
-        </nav>∫
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>CSS Grid - LMSGI</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <h1>CSS Grid Layout</h1>
+  </header>
+
+  <main class="site-main">
+    <article class="content-card">
+      <h2>¿Qué es CSS Grid?</h2>
+      <p><strong>CSS Grid</strong> es un sistema de diseño bidimensional que permite organizar los elementos en filas y columnas, proporcionando control total sobre la disposición en una cuadrícula.</p>
+
+      <hr>
+
+      <h3>Sintaxis básica</h3>
+      <pre class="code">
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  gap: 1rem;
+}
+.item {
+  background: #2b6cb0;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+      </pre>
+
+      <div class="demo grid-basic">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
       </div>
-    </header>
 
-    <main class="container">
-      <section id="simple" class="card">
-        <h2>Grid simple (2 columnas)</h2>
-        <div class="grid grid-simple">
-          <div class="cell"><p>párrafo</p></div>
-          <div class="cell"><p>párrafo</p></div>
-          <div class="cell"><p>párrafo</p></div>
-          <div class="cell"><p>párrafo</p></div>
-        </div>
-      </section>
+      <hr>
 
-      <section id="repeat" class="card">
-        <h2>Repeat / auto-fit (responsive)</h2>
-        <div class="grid grid-repeat">
-          <div class="cell"><p>párrafo</p></div>
-          <div class="cell"><p>párrafo</p></div>
-          <div class="cell"><p>párrafo</p></div>
-          <div class="cell"><p>párrafo</p></div>
-          <div class="cell"><p>párrafo</p></div>
-        </div>
-      </section>
+      <h2>Definir filas y columnas</h2>
+      <p>Podemos definir el número y tamaño de filas y columnas con <code>grid-template-columns</code> y <code>grid-template-rows</code>.  
+        También podemos usar funciones como <code>repeat()</code> y unidades <code>fr</code> (fracciones del espacio disponible).</p>
 
-      <section id="areas" class="card">
-        <h2>Grid-template-areas</h2>
-        <div class="grid grid-areas">
-          <div class="header area"><p>párrafo</p></div>
-          <div class="sidebar area"><p>párrafo</p></div>
-          <div class="content area"><p>párrafo</p></div>
-          <div class="footer area"><p>párrafo</p></div>
-        </div>
-      </section>
-
-      <section id="auto-rows" class="card">
-        <h2>grid-auto-rows y align-items / justify-items</h2>
-        <div class="grid grid-auto-rows">
-          <div class="cell tall"><p>párrafo</p></div>
-          <div class="cell"><p>párrafo</p></div>
-          <div class="cell"><p>párrafo</p></div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div class="container">
-        <p>04 - Grid — ejemplos didácticos</p>
+      <p class="label"><code>grid-template-columns: 1fr 2fr 1fr;</code></p>
+      <div class="demo grid-columns">
+        <div class="item">A</div><div class="item">B</div><div class="item">C</div>
       </div>
-    </footer>
-  </body>
+
+      <p class="label"><code>grid-template-rows: 80px 120px;</code></p>
+      <div class="demo grid-rows">
+        <div class="item">1</div><div class="item">2</div><div class="item">3</div>
+        <div class="item">4</div><div class="item">5</div><div class="item">6</div>
+      </div>
+
+      <hr>
+
+      <h2>Grid Areas</h2>
+      <p>Podemos asignar nombres a las zonas de la cuadrícula con <code>grid-template-areas</code>, y luego usar <code>grid-area</code> en cada elemento.</p>
+
+      <pre class="code">
+.container {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "sidebar main"
+    "footer footer";
+  grid-template-columns: 1fr 2fr;
+  gap: 0.5rem;
+}
+
+.header  { grid-area: header; }
+.sidebar { grid-area: sidebar; }
+.main    { grid-area: main; }
+.footer  { grid-area: footer; }
+      </pre>
+
+      <div class="demo grid-areas">
+        <div class="item header">Header</div>
+        <div class="item sidebar">Sidebar</div>
+        <div class="item main">Main</div>
+        <div class="item footer">Footer</div>
+      </div>
+
+      <hr>
+
+      <h2>Alineación y justificación</h2>
+      <p>Con <code>justify-items</code> y <code>align-items</code> puedes alinear los elementos dentro de sus celdas.</p>
+
+      <p class="label"><code>justify-items: center; align-items: center;</code></p>
+      <div class="demo grid-align">
+        <div class="item">1</div><div class="item">2</div><div class="item">3</div>
+        <div class="item">4</div><div class="item">5</div><div class="item">6</div>
+      </div>
+
+      <a href="../index.html" class="back-link">⬅ Volver al índice</a>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <p>Lenguajes de marcas y sistemas de gestión de información</p>
+  </footer>
+</body>
 </html>

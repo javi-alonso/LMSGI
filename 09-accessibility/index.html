@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Accesibilidad Web - LMSGI</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <h1>Accesibilidad Web (A11y)</h1>
+  </header>
+
+  <main class="site-main">
+    <article class="content-card">
+
+      <h2>¿Qué es la accesibilidad web?</h2>
+      <p>La <strong>accesibilidad web (A11y)</strong> busca que todas las personas, incluyendo aquellas con discapacidades visuales, auditivas, motrices o cognitivas, puedan usar y entender un sitio web.</p>
+
+      <p>En CSS y HTML, aplicar accesibilidad significa cuidar el contraste, las fuentes, el foco, los textos alternativos y la navegación por teclado.</p>
+
+      <hr>
+
+      <h2>Contraste de colores</h2>
+      <p>El texto debe tener suficiente contraste con su fondo para ser legible.  
+      Usa herramientas como <a href="https://contrast-ratio.com/" target="_blank">Contrast Ratio</a> para verificarlo.</p>
+
+      <div class="demo contrast-demo">
+        <div class="card good">
+          <p>Buen contraste</p>
+        </div>
+        <div class="card bad">
+          <p>Contraste insuficiente</p>
+        </div>
+      </div>
+
+      <hr>
+
+      <h2>Enlaces y foco visibles</h2>
+      <p>El foco (<code>:focus</code>) debe ser visible al navegar con teclado (por ejemplo, con la tecla <kbd>Tab</kbd>).</p>
+
+      <div class="demo focus-demo">
+        <a href="#" class="link">Enlace 1</a>
+        <a href="#" class="link">Enlace 2</a>
+        <button class="btn">Botón accesible</button>
+      </div>
+
+      <hr>
+
+      <h2>Texto alternativo en imágenes</h2>
+      <p>Las imágenes deben tener <code>alt</code> para describir su contenido a los lectores de pantalla.</p>
+
+      <div class="demo image-demo">
+        <figure>
+          <img src="https://via.placeholder.com/150" alt="Un paisaje de montaña al atardecer">
+          <figcaption>Imagen con texto alternativo</figcaption>
+        </figure>
+        <figure>
+          <img src="https://via.placeholder.com/150">
+          <figcaption>Sin atributo <code>alt</code></figcaption>
+        </figure>
+      </div>
+
+      <hr>
+
+      <h2>Tamaños de texto accesibles</h2>
+      <p>Usa unidades relativas (<code>em</code> o <code>rem</code>) para que el texto se adapte al tamaño configurado por el usuario.</p>
+
+      <div class="demo text-demo">
+        <p class="good-text">Tamaño con <code>rem</code></p>
+        <p class="bad-text">Tamaño fijo en <code>px</code></p>
+      </div>
+
+      <hr>
+
+      <h2>Animaciones accesibles</h2>
+      <p>Las animaciones deben ser suaves y ofrecer la opción de reducir movimiento con <code>@media (prefers-reduced-motion: reduce)</code>.</p>
+
+      <div class="demo motion-demo">
+        <div class="circle"></div>
+      </div>
+
+      <hr>
+
+      <h2>Buenas prácticas generales</h2>
+      <ul>
+        <li>Usa etiquetas semánticas: <code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;footer&gt;</code>.</li>
+        <li>Usa <code>aria-label</code> y roles solo cuando no haya alternativa semántica.</li>
+        <li>Evita texto dentro de imágenes: usa HTML + CSS siempre que sea posible.</li>
+        <li>Prueba la navegación por teclado y lectores de pantalla.</li>
+      </ul>
+
+      <a href="../index.html" class="back-link">⬅ Volver al índice</a>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <p>Lenguajes de marcas y sistemas de gestión de información</p>
+  </footer>
+</body>
+</html>

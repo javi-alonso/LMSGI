@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Buenas prácticas CSS - LMSGI</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <h1>Buenas prácticas en CSS</h1>
+  </header>
+
+  <main class="site-main">
+    <article class="content-card">
+
+      <h2>¿Por qué seguir buenas prácticas?</h2>
+      <p>Las buenas prácticas en CSS ayudan a que tus estilos sean más fáciles de mantener, más rápidos y más coherentes entre proyectos.  
+      Aquí verás una lista de consejos prácticos con ejemplos visuales.</p>
+
+      <hr>
+
+      <h2>Usa variables CSS</h2>
+      <p>Las variables permiten mantener consistencia en colores, fuentes y tamaños.</p>
+      <pre class="code">
+:root {
+  --color-primary: #2b6cb0;
+  --radius: 8px;
+}
+button {
+  background: var(--color-primary);
+  border-radius: var(--radius);
+}
+      </pre>
+      <div class="demo">
+        <button class="btn good">Buena práctica</button>
+        <button class="btn bad">Sin variables</button>
+      </div>
+
+      <hr>
+
+      <h2>Usa unidades relativas</h2>
+      <p>Las unidades relativas (<code>em</code>, <code>rem</code>, <code>%</code>, <code>vh</code>, <code>vw</code>) se adaptan mejor a diferentes pantallas.</p>
+      <div class="demo size-demo">
+        <div class="box relative-size">rem / %</div>
+        <div class="box fixed-size">px</div>
+      </div>
+
+      <hr>
+
+      <h2>Usa clases descriptivas y evita selectores excesivos</h2>
+      <p>Evita selectores largos o dependientes del HTML.  
+         Usa nombres de clase claros y reutilizables.</p>
+
+      <pre class="code bad-code">
+/*Malo */
+main article section div ul li a span { color: red; }
+
+/*Bueno */
+.nav-link { color: red; }
+      </pre>
+
+      <hr>
+
+      <h2>Mobile First y Media Queries claras</h2>
+      <p>Diseña primero para pantallas pequeñas y luego amplía con <code>min-width</code>.</p>
+      <pre class="code">
+.container {
+  font-size: 1rem;
+}
+@media (min-width: 768px) {
+  .container {
+    font-size: 1.2rem;
+  }
+}
+      </pre>
+
+      <div class="demo media-demo">
+        <div class="responsive-card">Redimensiona la ventana</div>
+      </div>
+
+      <hr>
+
+      <h2>Añade transiciones suaves</h2>
+      <p>Mejoran la experiencia visual sin sobrecargar el rendimiento.</p>
+      <div class="demo transition-demo">
+        <div class="hover-box">Hover me</div>
+      </div>
+
+      <hr>
+
+      <h2>Mantén accesibilidad</h2>
+      <ul>
+        <li>Usa suficiente contraste entre texto y fondo.</li>
+        <li>No uses solo color para transmitir información.</li>
+        <li>Resalta el foco en elementos interactivos (<code>:focus</code>).</li>
+      </ul>
+
+      <div class="demo">
+        <button class="btn focus-demo">Pruébame (focus visible)</button>
+      </div>
+
+      <a href="../index.html" class="back-link">⬅ Volver al índice</a>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <p>Lenguajes de marcas y sistemas de gestión de información</p>
+  </footer>
+</body>
+</html>

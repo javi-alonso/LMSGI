@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Animaciones en CSS - LMSGI</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <h1>Animaciones en CSS</h1>
+  </header>
+
+  <main class="site-main">
+    <article class="content-card">
+      <h2>¿Qué son las animaciones?</h2>
+      <p>Las <strong>animaciones en CSS</strong> permiten modificar de forma gradual los valores de las propiedades de
+        un elemento a lo largo del tiempo. Se definen con <code>@keyframes</code> y se aplican mediante la propiedad
+        <code>animation</code>.</p>
+
+      <h3>Sintaxis básica</h3>
+      <pre class="code">
+@keyframes nombreAnimacion {
+  from { propiedad: valorInicial; }
+  to   { propiedad: valorFinal; }
+}
+
+.elemento {
+  animation-name: nombreAnimacion;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+      </pre>
+
+      <hr>
+
+      <h2>Propiedades principales de animación</h2>
+      <ul>
+        <li><strong>animation-name:</strong> Nombre del bloque <code>@keyframes</code> que se aplicará.</li>
+        <li><strong>animation-duration:</strong> Duración total de la animación (por ejemplo, <code>2s</code> o
+          <code>500ms</code>).</li>
+        <li><strong>animation-timing-function:</strong> Curva de aceleración (por ejemplo, <code>linear</code>,
+          <code>ease-in</code>, <code>ease-out</code>).</li>
+        <li><strong>animation-delay:</strong> Tiempo de espera antes de empezar la animación.</li>
+        <li><strong>animation-iteration-count:</strong> Número de repeticiones (<code>infinite</code> para bucles).</li>
+        <li><strong>animation-direction:</strong> Permite invertir la animación en cada repetición
+          (<code>alternate</code>).</li>
+        <li><strong>animation-fill-mode:</strong> Controla el estado final (<code>forwards</code>,
+          <code>backwards</code>).</li>
+      </ul>
+
+      <hr>
+
+      <h2>Ejemplos visuales</h2>
+
+      <h3>Movimiento lineal</h3>
+      <p class="label"><code>animation: moveRight 2s infinite alternate ease-in-out;</code></p>
+      <div class="demo">
+        <div class="box move"></div>
+      </div>
+
+      <h3>Cambio de color</h3>
+      <p class="label"><code>animation: colorChange 3s infinite alternate;</code></p>
+      <div class="demo">
+        <div class="box color"></div>
+      </div>
+
+      <h3>Rebote (bounce)</h3>
+      <p class="label"><code>animation: bounce 1.5s infinite ease-in-out;</code></p>
+      <div class="demo">
+        <div class="box bounce"></div>
+      </div>
+
+      <h3>Rotación</h3>
+      <p class="label"><code>animation: spin 4s linear infinite;</code></p>
+      <div class="demo">
+        <div class="box spin"></div>
+      </div>
+
+      <h3>Múltiples animaciones</h3>
+      <p class="label">
+        <code>animation: moveRight 2s infinite alternate ease-in-out, colorChange 3s infinite alternate;</code></p>
+      <div class="demo">
+        <div class="box combo"></div>
+      </div>
+
+      <hr>
+
+      <h2>Animaciones al pasar el ratón (hover)</h2>
+      <p>Las animaciones también pueden activarse al pasar el ratón sobre un elemento. Esto se consigue combinando
+        <code>:hover</code> con propiedades <code>animation</code> o <code>transition</code>.</p>
+
+      <p class="label"><code>animation: pulse 0.8s ease-in-out;</code> (solo al hacer hover)</p>
+      <div class="demo">
+        <div class="box hover-anim"></div>
+      </div>
+
+      <hr>
+
+      <h2>Buenas prácticas</h2>
+      <ul>
+        <li>Evita animar propiedades que afecten al <strong>layout</strong> (como <code>width</code> o
+          <code>height</code>); usa <code>transform</code> o <code>opacity</code> para mayor rendimiento.</li>
+        <li>Usa <code>alternate</code> y <code>ease-in-out</code> para animaciones suaves.</li>
+        <li>Define duraciones coherentes (entre 0.3s y 3s normalmente).</li>
+        <li>Si la animación es decorativa, usa <code>prefers-reduced-motion</code> para respetar la accesibilidad.</li>
+      </ul>
+
+
+
+      <a href="../index.html" class="back-link">⬅ Volver al índice</a>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <p>Lenguajes de marcas y sistemas de gestión de información</p>
+  </footer>
+</body>
+
+</html>

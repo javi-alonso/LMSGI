@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Positioning - LMSGI</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <h1>Positioning en CSS</h1>
+  </header>
+
+  <main class="site-main">
+    <article class="content-card">
+      <h2>¿Qué es la propiedad <code>position</code>?</h2>
+      <p>La propiedad <strong>position</strong> define cómo se posiciona un elemento en el flujo del documento y cómo
+        responde a las propiedades <code>top</code>, <code>left</code>, <code>right</code> y <code>bottom</code>.</p>
+
+      <hr>
+
+      <h3>Valores principales</h3>
+      <ul>
+        <li><strong>static:</strong> posición por defecto, sigue el flujo normal.</li>
+        <li><strong>relative:</strong> se posiciona en relación a su posición original.</li>
+        <li><strong>absolute:</strong> se posiciona respecto al primer contenedor con posición distinta de
+          <code>static</code>.
+        </li>
+        <li><strong>fixed:</strong> se fija en la ventana del navegador (viewport).</li>
+        <li><strong>sticky:</strong> combina el comportamiento de relative y fixed.</li>
+      </ul>
+
+      <hr>
+
+      <h2>Ejemplo 1: <code>position: static</code></h2>
+      <p>Este es el comportamiento por defecto. Los elementos siguen el flujo natural.</p>
+      <div class="demo static-demo">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+      </div>
+
+      <hr>
+
+      <h2>Ejemplo 2: <code>position: relative</code></h2>
+      <p>El elemento se mueve respecto a su posición original <strong>sin afectar a los demás elementos</strong>.
+        Observa cómo el cuadro azul se desplaza, pero los cuadros vecinos permanecen en su sitio.</p>
+
+      <div class="demo relative-demo">
+        <div class="box">1</div>
+        <div class="box relative-box">2 (relative)</div>
+        <div class="box">3</div>
+      </div>
+
+      <p>Se ha aplicado:</p>
+      <pre class="code">
+.relative-box {
+  position: relative;
+  top: 20px;
+  left: 40px;
+}
+</pre>
+
+      <hr>
+
+      <h2>Ejemplo 3: <code>position: absolute</code></h2>
+      <p>Un elemento con <code>position: absolute</code> se posiciona en relación al primer contenedor padre que tenga
+        una posición distinta de <code>static</code>.</p>
+      <p>En este ejemplo, el cuadro morado está dentro de un contenedor gris que tiene <code>position: relative;</code>.
+        Se posiciona con <code>top: 20px;</code> y <code>right: 20px;</code>.</p>
+
+      <div class="demo absolute-container">
+        <div class="box abs">Absoluto</div>
+        <div class="marker">Contenedor (relative)</div>
+      </div>
+
+      <pre class="code">
+.absolute-container {
+  position: relative;
+}
+.abs {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+</pre>
+
+
+
+      <hr>
+
+      <h2>Ejemplo 4: <code>position: fixed</code></h2>
+      <p>El elemento permanece fijo al hacer scroll.</p>
+      <div class="demo fixed-demo">
+        <div class="box fixed">Fijo</div>
+      </div>
+
+      <p>Haz scroll para ver cómo el círculo permanece en la esquina inferior derecha.</p>
+      <div class="scroll-space"></div>
+
+      <hr>
+
+      <h2>Ejemplo 5: <code>position: sticky</code></h2>
+      <p>Se comporta como <code>relative</code> hasta alcanzar un punto, donde se fija.</p>
+      <ul>
+        <li>
+          El contenedor tiene scroll vertical (overflow-y: auto) y una altura limitada.
+        </li>
+        <li>
+          El encabezado dentro del contenedor tiene <code>position: sticky</code> y una propiedad <code>top</code>
+          definida.
+        </li>
+        <li>
+          Cuando haces scroll dentro del contenedor, el encabezado se desplaza hasta que su borde superior alcanza
+          el valor definido por <code>top</code>.
+        </li>
+        <li>
+          En ese punto, el encabezado se "pega" y permanece visible mientras el resto del contenido sigue
+          desplazándose.
+        </li>
+
+      </ul>
+
+      <div class="demo sticky-demo">
+        <div class="sticky-header">Encabezado Sticky</div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum perspiciatis error architecto dignissimos
+          veniam quas repellat provident exercitationem repellendus. Officia quaerat eum vel molestias rem vero maiores,
+          sit accusantium voluptatibus?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum perspiciatis error architecto dignissimos
+          veniam quas repellat provident exercitationem repellendus. Officia quaerat eum vel molestias rem vero maiores,
+          sit accusantium voluptatibus?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum perspiciatis error architecto dignissimos
+          veniam quas repellat provident exercitationem repellendus. Officia quaerat eum vel molestias rem vero maiores,
+          sit accusantium voluptatibus?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum perspiciatis error architecto dignissimos
+          veniam quas repellat provident exercitationem repellendus. Officia quaerat eum vel molestias rem vero maiores,
+          sit accusantium voluptatibus?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum perspiciatis error architecto dignissimos
+          veniam quas repellat provident exercitationem repellendus. Officia quaerat eum vel molestias rem vero maiores,
+          sit accusantium voluptatibus?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum perspiciatis error architecto dignissimos
+          veniam quas repellat provident exercitationem repellendus. Officia quaerat eum vel molestias rem vero maiores,
+          sit accusantium voluptatibus?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum perspiciatis error architecto dignissimos
+          veniam quas repellat provident exercitationem repellendus. Officia quaerat eum vel molestias rem vero maiores,
+          sit accusantium voluptatibus?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum perspiciatis error architecto dignissimos
+          veniam quas repellat provident exercitationem repellendus. Officia quaerat eum vel molestias rem vero maiores,
+          sit accusantium voluptatibus?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum perspiciatis error architecto dignissimos
+          veniam quas repellat provident exercitationem repellendus. Officia quaerat eum vel molestias rem vero maiores,
+          sit accusantium voluptatibus?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum perspiciatis error architecto dignissimos
+          veniam quas repellat provident exercitationem repellendus. Officia quaerat eum vel molestias rem vero maiores,
+          sit accusantium voluptatibus?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum perspiciatis error architecto dignissimos
+          veniam quas repellat provident exercitationem repellendus. Officia quaerat eum vel molestias rem vero maiores,
+          sit accusantium voluptatibus?</p>
+      </div>
+
+      <a href="../index.html" class="back-link">⬅ Volver al índice</a>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <p>Lenguajes de marcas y sistemas de gestión de información</p>
+  </footer>
+</body>
+
+</html>

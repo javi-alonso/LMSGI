@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Semántica HTML - LMSGI</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <h1>Semántica en HTML</h1>
+  </header>
+
+  <main class="site-main">
+    <article class="content-card">
+      <h2>¿Qué significa la semántica en HTML?</h2>
+      <p>La <strong>semántica</strong> en HTML se refiere al uso de etiquetas que describen claramente el contenido que
+        contienen. Esto ayuda a los navegadores, motores de búsqueda y tecnologías asistivas a interpretar correctamente
+        la información.</p>
+
+      <h3>Ejemplos de etiquetas semánticas:</h3>
+      <ul>
+        <li><code>&lt;header&gt;</code> → Encabezado de la página o sección.</li>
+        <li><code>&lt;nav&gt;</code> → Bloque de navegación con enlaces.</li>
+        <li><code>&lt;main&gt;</code> → Contenido principal del documento.</li>
+        <li><code>&lt;article&gt;</code> → Contenido independiente (una noticia, post, etc.).</li>
+        <li><code>&lt;section&gt;</code> → Agrupa contenido temático.</li>
+        <li><code>&lt;aside&gt;</code> → Contenido complementario (barras laterales, notas).</li>
+        <li><code>&lt;footer&gt;</code> → Pie de página.</li>
+      </ul>
+
+      <h3>Estructura semántica típica:</h3>
+      <pre class="code">
+&lt;header&gt;
+  &lt;h1&gt;Título del sitio&lt;/h1&gt;
+  &lt;nav&gt;
+    &lt;a href="#"&gt;Inicio&lt;/a&gt;
+    &lt;a href="#"&gt;Artículos&lt;/a&gt;
+    &lt;a href="#"&gt;Contacto&lt;/a&gt;
+  &lt;/nav&gt;
+&lt;/header&gt;
+
+&lt;main&gt;
+  &lt;article&gt;
+    &lt;h2&gt;Título de artículo&lt;/h2&gt;
+    &lt;p&gt;Contenido principal...&lt;/p&gt;
+  &lt;/article&gt;
+&lt;/main&gt;
+
+&lt;footer&gt;
+  &lt;p&gt;Mi sitio web&lt;/p&gt;
+&lt;/footer&gt;
+      </pre>
+
+      <h3>Ejemplo visual:</h3>
+      <div class="semantica-demo">
+        <header>Header</header>
+        <nav>Nav</nav>
+        <main>
+          <article>Article</article>
+          <aside>Aside</aside>
+        </main>
+        <footer>Footer</footer>
+      </div>
+
+      <a href="../" class="back-link">⬅ Volver al índice</a>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <p>Lenguajes de marcas y sistemas de gestión de información</p>
+  </footer>
+</body>
+
+</html>

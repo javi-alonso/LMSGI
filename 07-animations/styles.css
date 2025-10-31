@@ -1,0 +1,189 @@
+:root {
+  --color-bg: #f7f7f8;
+  --color-card: #ffffff;
+  --color-accent: #2b6cb0;
+  --color-muted: #6b7280;
+  --color-gradient-start: #BD3F32;
+  --color-gradient-end: #CB356B;
+  --radius-md: 8px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+hr {
+  margin: 2rem 0;
+  border: none;
+  height: 2px;
+  background: linear-gradient(to right, var(--color-gradient-start), var(--color-gradient-end));
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: var(--color-bg);
+  color: #111827;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.site-header,
+.site-footer {
+  background: var(--color-card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 1.25rem;
+}
+
+.site-main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.content-card {
+  background: var(--color-card);
+  padding: 2rem;
+  border-radius: var(--radius-md);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  max-width: 1000px;
+  width: 100%;
+}
+
+h2, h3 {
+  color: var(--color-accent);
+  margin-bottom: 0.5rem;
+}
+
+p, ul {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+ul {
+  padding-left: 1.5rem;
+}
+
+pre.code {
+  background: #1e1e1e;
+  color: #f3f3f3;
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+}
+
+/* DEMOS */
+.demo {
+  background: #e5e7eb;
+  padding: 1.5rem;
+  border-radius: var(--radius-md);
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.box {
+  width: 4rem;
+  height: 4rem;
+  background: var(--color-accent);
+  border-radius: var(--radius-md);
+}
+
+/* ============================
+   ANIMACIONES
+============================ */
+@keyframes moveRight {
+  from { transform: translateX(0); }
+  to   { transform: translateX(80%); }
+}
+
+@keyframes colorChange {
+  from { background: #2b6cb0; }
+  to   { background: #CB356B; }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-40%); }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* Aplicaciones */
+.move {
+  animation: moveRight 2s infinite alternate ease-in-out;
+}
+
+.color {
+  animation: colorChange 3s infinite alternate;
+}
+
+.bounce {
+  animation: bounce 1.5s infinite ease-in-out;
+}
+
+.spin {
+  animation: spin 4s linear infinite;
+}
+
+.combo {
+  animation: moveRight 2s infinite alternate ease-in-out,
+             colorChange 3s infinite alternate;
+}
+
+/* Botón volver */
+.back-link {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.6rem 1rem;
+  border-radius: var(--radius-md);
+  background: linear-gradient(to right, var(--color-gradient-start), var(--color-gradient-end));
+  color: #fff;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.back-link:hover {
+  transform: translateY(-3px);
+}
+
+.site-footer p {
+  color: var(--color-muted);
+  font-size: 0.9rem;
+}
+
+/* Accesibilidad: reducir movimiento */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+/* ============================
+   ANIMACIÓN AL HOVER
+============================ */
+@keyframes pulse {
+  0%   { transform: scale(1); background-color: var(--color-accent); }
+  50%  { transform: scale(1.2); background-color: var(--color-gradient-end); }
+  100% { transform: scale(1); background-color: var(--color-accent); }
+}
+
+.hover-anim {
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+/* Aplica animación solo cuando el cursor está encima */
+.hover-anim:hover {
+  animation: pulse 0.8s ease-in-out;
+}

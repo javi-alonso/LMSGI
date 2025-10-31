@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Media Queries - LMSGI</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <h1>Media Queries en CSS</h1>
+  </header>
+
+  <main class="site-main">
+    <article class="content-card">
+
+      <h2>¿Qué son las Media Queries?</h2>
+      <p>Las <strong>Media Queries</strong> permiten aplicar estilos CSS diferentes en función de las características
+        del dispositivo, como el ancho de la pantalla, la orientación o la resolución.
+        Son esenciales para crear diseños <strong>responsivos</strong>.</p>
+
+      <hr>
+
+      <h3>Sintaxis básica</h3>
+      <pre class="code">
+@media (max-width: 768px) {
+  body {
+    background-color: lightblue;
+  }
+}
+      </pre>
+
+      <p>Esto significa: “Cuando el ancho de la pantalla sea de 768 píxeles o menos, aplica estos estilos”.</p>
+
+      <hr>
+
+      <h2>Ejemplo visual: cambio de color</h2>
+      <p>Reduce el tamaño de la ventana para ver cómo cambia el color de los cuadros según el ancho.</p>
+
+      <div class="demo media-demo">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+      </div>
+
+      <hr>
+
+      <h2>Diseño adaptable con Grid y Media Queries</h2>
+      <p>También podemos usar media queries para cambiar la disposición de una cuadrícula.</p>
+
+      <div class="demo grid-demo">
+        <div class="card">A</div>
+        <div class="card">B</div>
+        <div class="card">C</div>
+        <div class="card">D</div>
+      </div>
+
+      <p><strong>Reglas aplicadas:</strong></p>
+      <ul>
+        <li>En pantallas grandes: 4 columnas</li>
+        <li>En tablets: 2 columnas</li>
+        <li>En móviles: 1 columna</li>
+      </ul>
+
+      <hr>
+
+      <h2>Buenas prácticas</h2>
+      <ul>
+        <li>Usa <code>min-width</code> (mobile-first) siempre que sea posible.</li>
+        <li>Aplica puntos de ruptura (breakpoints) en función del contenido, no del dispositivo.</li>
+        <li>Evita usar tamaños fijos en píxeles: usa <code>em</code>, <code>rem</code> o <code>%</code>.</li>
+        <li>Combina Media Queries con Flexbox o Grid para una adaptación fluida.</li>
+      </ul>
+
+      <a href="../index.html" class="back-link">⬅ Volver al índice</a>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <p>Lenguajes de marcas y sistemas de gestión de información</p>
+  </footer>
+</body>
+
+</html>

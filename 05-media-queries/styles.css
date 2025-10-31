@@ -65,6 +65,10 @@ p, ul {
   line-height: 1.6;
 }
 
+ul {
+  padding-left: 1.5rem;
+}
+
 pre.code {
   background: #1e1e1e;
   color: #f3f3f3;
@@ -75,69 +79,73 @@ pre.code {
 }
 
 /* ============================
-   DEMOS GRID
+   DEMOS MEDIA QUERIES
 ============================ */
 .demo {
   background: #e5e7eb;
   padding: 1rem;
   border-radius: var(--radius-md);
   margin-bottom: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-.item {
+/* Ejemplo 1: cambio de color */
+.box {
+  width: 120px;
+  height: 120px;
+  border-radius: var(--radius-md);
+  background: #2b6cb0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.2rem;
+  transition: background 0.5s ease;
+}
+
+/* Cambia el color según el ancho */
+@media (max-width: 1024px) {
+  .box { background: #2563eb; }
+}
+@media (max-width: 768px) {
+  .box { background: #7c3aed; }
+}
+@media (max-width: 480px) {
+  .box { background: #CB356B; }
+}
+
+/* Ejemplo 2: diseño adaptable */
+.grid-demo {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.card {
   background: #2b6cb0;
   color: #fff;
-  text-align: center;
-  padding: 1rem;
   border-radius: var(--radius-md);
+  padding: 1rem;
+  text-align: center;
+  font-weight: bold;
 }
 
-/* Grid básico */
-.grid-basic {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
+/* Tablets: 2 columnas */
+@media (max-width: 768px) {
+  .grid-demo {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-/* Columnas personalizadas */
-.grid-columns {
-  display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
-  gap: 1rem;
-}
-
-/* Filas personalizadas */
-.grid-rows {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 80px 120px;
-  gap: 1rem;
-}
-
-/* Grid Areas */
-.grid-areas {
-  display: grid;
-  grid-template-areas:
-    "header header"
-    "sidebar main"
-    "footer footer";
-  grid-template-columns: 1fr 2fr;
-  gap: 0.5rem;
-}
-
-.grid-areas .header  { grid-area: header; background: #1e3a8a; }
-.grid-areas .sidebar { grid-area: sidebar; background: #2563eb; }
-.grid-areas .main    { grid-area: main; background: #3b82f6; }
-.grid-areas .footer  { grid-area: footer; background: #60a5fa; }
-
-/* Alineación */
-.grid-align {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  justify-items: center;
-  align-items: center;
-  gap: 1rem;
-  height: 200px;
+/* Móviles: 1 columna */
+@media (max-width: 480px) {
+  .grid-demo {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Enlace volver */
