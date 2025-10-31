@@ -60,6 +60,11 @@ body {
     justify-content: center
 }
 
+.bg-special {
+  background: linear-gradient(to right, #888c8f, #2c3e50);
+    color: #fff;
+}
+
 .bg-gradient {
     background: linear-gradient(to right, var(--color-gradient-start), var(--color-gradient-end));
     color: #fff;
